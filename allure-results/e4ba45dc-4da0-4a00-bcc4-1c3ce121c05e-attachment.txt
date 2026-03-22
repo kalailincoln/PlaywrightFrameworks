@@ -1,0 +1,4 @@
+✅registration is completed successfully
+✅Logout is completed
+✅Login is successfull
+✅User Logged Out successfully
