@@ -5,7 +5,7 @@
 4.Logout successfully
 
 */
-import { test, expect, Page } from "@playwright/test";
+import { test, expect } from "../fixtures/baseTest";
 import { HomePage } from '../pages/HomePage';
 import { RegistrationPage } from "../pages/RegistrationPage";
 import { RandomDataUtil } from '../utils/randomDataGenerator'
@@ -14,6 +14,7 @@ import { LoginPage } from "../pages/LoginPage";
 import { dataprovider } from "../utils/dataProviders";
 import { Logout } from "../pages/LogoutPage";
 import { MyAccountPage } from "../pages/MyaccountPage";
+import { Page } from "@playwright/test";
 
 //global variables
 

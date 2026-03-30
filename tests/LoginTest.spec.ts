@@ -12,7 +12,7 @@ Steps:
 
 */
 
-import { test, expect } from "@playwright/test";
+import { test, expect } from "../fixtures/baseTest";
 import { HomePage } from '../pages/HomePage';
 import { MyAccountPage } from "../pages/MyaccountPage";
 import { TestConfig } from "../test.config";

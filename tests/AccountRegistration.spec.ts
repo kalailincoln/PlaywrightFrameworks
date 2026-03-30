@@ -11,7 +11,7 @@ Steps:
 5. Validate the conformation message
 */
 // import page classes , randomutil , test config.ts for app URL
-import { test, expect } from "@playwright/test";
+import { test, expect } from "../fixtures/baseTest";;
 import { HomePage } from '../pages/HomePage';
 import { RegistrationPage } from "../pages/RegistrationPage";
 import { RandomDataUtil } from '../utils/randomDataGenerator';
@@ -25,23 +25,9 @@ let homepage: HomePage;
 let regPage: RegistrationPage;
 let testconfig: TestConfig;
 
-test.beforeEach(async ({ page }) => {   //// create objects for page classes , test config to access properties/methods
-
-    testconfig = new TestConfig();
-    await page.goto(testconfig.appUrl);  // naviagat to URL
-
-    homepage = new HomePage(page);
-    regPage = new RegistrationPage(page);
-
-})
-
-test.afterEach(async ({ page }) => { 
-
-    await page.close();
-})
 
 // create test
-test('user registration test @master @sanity @regression' , async ({ }) => {
+test('user registration test @master @sanity @regression' , async ({homepage , regPage }) => {
 
     //Go to my account and click register
     await homepage.clickMyAccount();
@@ -53,7 +39,7 @@ test('user registration test @master @sanity @regression' , async ({ }) => {
     await regPage.setLastName(RandomDataUtil.getLastName());
     await regPage.setEmail(RandomDataUtil.getEmail());
     await regPage.setTelephoneNumber(RandomDataUtil.getTelephoneNumber());
-    const passwrd = await RandomDataUtil.getpassword();
+    const passwrd = RandomDataUtil.getpassword();
     await regPage.setpassword(passwrd);
     await regPage.setConfirmPassword(passwrd);
     await regPage.setPrivacyPolicy();
