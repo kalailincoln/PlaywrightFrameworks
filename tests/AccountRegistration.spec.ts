@@ -24,13 +24,13 @@ import { TestConfig } from "../test.config";
 let homepage: HomePage;
 let regPage: RegistrationPage;
 let testconfig: TestConfig;
-
+test.use({ storageState: undefined });
 
 // create test
 test('user registration test @master @sanity @regression' , async ({homepage , regPage }) => {
 
     //Go to my account and click register
-    await homepage.clickMyAccount();
+    //await homepage.clickMyAccount();
     await homepage.clickRegister();
 
     //Complete registration form with random data

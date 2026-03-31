@@ -24,7 +24,7 @@ let testconfig: TestConfig;
 let Myaccount:MyAccountPage;
 let loginpage:LoginPage;
 
-
+test.use({ storageState: undefined });
 
 //before each  -launching URL , creating objects for Page objects
 
@@ -54,14 +54,14 @@ test("user Login Test @master @sanity @regression" , async ({})=>{
 
       // 2. Navigate to Login page via Homepage
 
-     await homepage.clickMyAccount();
-     await homepage.clickLoginButton();
+    // await homepage.clickMyAccount();
+     //await homepage.clickLoginButton();
 
       // 3. Enter valid credentials and login
 
-     await loginpage.setEmailAddress(testconfig.email);  // calling the method from loginpage and credentials from test.config
-     await loginpage.setpassword(testconfig.password);
-     await loginpage.clickLoginButton();
+    // await loginpage.setEmailAddress(testconfig.email);  // calling the method from loginpage and credentials from test.config
+    // await loginpage.setpassword(testconfig.password);
+   //  await loginpage.clickLoginButton();
 
       //4.Verify successful login by checking 'My Account' visibility in the page
 

@@ -2,6 +2,8 @@ import { defineConfig, devices } from '@playwright/test';
 
 
 export default defineConfig({
+
+  globalSetup:require.resolve('./globalSetup'),
   timeout : 30*1000 , 
   testDir: './tests',
  
@@ -19,9 +21,11 @@ export default defineConfig({
    ['list']
   
   ],
+
   
   use: {
-  
+
+    storageState:'auth/user.json',
     trace: 'on-first-retry',
     screenshot:'only-on-failure',
     video:'retain-on-failure',
